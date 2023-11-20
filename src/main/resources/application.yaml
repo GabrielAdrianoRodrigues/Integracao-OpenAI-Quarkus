@@ -1,0 +1,24 @@
+quarkus:
+  devservices:
+    enabled: true
+  swagger-ui:
+    enable: true
+    always-include: true
+    path: /swagger
+  smallrye-openapi:
+    open-api-version: "3.1.0"
+    info-title: Speech To Text API
+    info-version: "1.0"
+    info-description: Uma API que transcreve audio em texto feita em Quarkus
+    info-contact-email: gabrieladriano@furb.br
+  http:
+    cors: 
+      ~: true
+      access-control-allow-credentials: true
+      origins: /.*/
+      methods: GET, POST, PUT, DELETE, PATCH, OPTION
+      headers: Access-Control-Allow-Headers, Accept, Content-Type, Authorization, X-Skip-Interceptor
+  rest-client:
+    openai-client: 
+      url: https://api.openai.com
+      scope: jakarta.inject.Singleton    
